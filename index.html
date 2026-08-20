@@ -6,23 +6,25 @@
     <title>NLC Performance // Function Tier Blueprint</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #0B0B0D;
-            --bg-card: #141417;
-            --bg-card-hover: #1A1A1F;
-            --border-color: #26262B;
-            --border-highlight: #FF5500;
-            --primary-orange: #FF5500;
-            --primary-orange-glow: rgba(255, 85, 0, 0.2);
-            --text-main: #F4F4F6;
-            --text-muted: #9E9EA8;
+            --bg-main: #030303;
+            --bg-card: rgba(25, 25, 25, 0.6);
+            --bg-card-hover: rgba(40, 40, 40, 0.8);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --border-highlight: #ff5500;
+            --primary-orange: #ff5500;
+            --primary-orange-glow: rgba(255, 85, 0, 0.4);
+            --text-main: #e5e5e5;
+            --text-muted: #a0a0a0;
             --accent-green: #10B981;
             --accent-amber: #F59E0B;
             --accent-red: #EF4444;
+            
             --font-heading: 'Oswald', sans-serif;
             --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
         }
 
         * {
@@ -33,18 +35,18 @@
 
         body {
             background-color: var(--bg-main);
+            background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #030303 70%);
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
             padding-bottom: 60px;
+            min-height: 100vh;
         }
 
         /* HEADER */
         header {
-            background: linear-gradient(180deg, rgba(255,85,0,0.12) 0%, rgba(11,11,13,1) 100%);
-            border-bottom: 1px solid var(--border-color);
-            padding: 24px 16px;
+            padding: 32px 16px 24px;
             text-align: center;
         }
 
@@ -54,62 +56,63 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
         }
 
         .brand-badge {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 12px;
-            background: #000;
-            border: 1px solid var(--primary-orange);
-            padding: 6px 20px;
-            border-radius: 50px;
-            box-shadow: 0 0 15px var(--primary-orange-glow);
+            gap: 8px;
         }
 
         .brand-logo-img {
-            height: 32px;
-            width: auto;
-            object-fit: contain;
-            display: block;
-        }
-
-        .brand-title {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 15px;
-            letter-spacing: 2px;
-            color: #FFF;
-            text-transform: uppercase;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 20px var(--primary-orange-glow);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         h1 {
             font-family: var(--font-heading);
-            font-size: 32px;
+            font-size: 42px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #FFF;
+            line-height: 1.1;
         }
 
         h1 span {
             color: var(--primary-orange);
+            text-shadow: 0 0 15px rgba(255, 85, 0, 0.5);
+        }
+
+        .motto-bar {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 4px;
         }
 
         /* RPE LEGEND BANNER */
         .rpe-legend {
-            background: #18181C;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
             border: 1px solid var(--border-color);
             border-left: 4px solid var(--primary-orange);
             max-width: 1000px;
             margin: 20px auto 0;
-            padding: 12px 16px;
-            border-radius: 8px;
+            padding: 16px 20px;
+            border-radius: 12px;
             font-size: 13px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
         }
 
         .rpe-legend strong {
@@ -117,7 +120,7 @@
             color: var(--primary-orange);
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 15px;
+            font-size: 16px;
         }
 
         /* NAVIGATION TABS */
@@ -125,10 +128,10 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(11, 11, 13, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(3, 3, 3, 0.85);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-color);
-            padding: 12px 16px;
+            padding: 16px 16px 0;
             margin-top: 16px;
         }
 
@@ -136,7 +139,7 @@
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            gap: 8px;
+            gap: 24px;
             overflow-x: auto;
             scrollbar-width: none;
         }
@@ -144,68 +147,73 @@
         .nav-tabs::-webkit-scrollbar { display: none; }
 
         .tab-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            background: transparent;
+            border: none;
             color: var(--text-muted);
-            padding: 10px 18px;
-            border-radius: 8px;
+            padding: 0 0 12px 0;
             font-family: var(--font-heading);
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 15px;
             cursor: pointer;
             white-space: nowrap;
             transition: all 0.2s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
+            position: relative;
         }
 
-        .tab-btn:hover {
-            border-color: var(--primary-orange);
-            color: #FFF;
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: transparent;
+            transition: background-color 0.2s ease;
         }
+
+        .tab-btn:hover { color: #FFF; }
 
         .tab-btn.active {
-            background: var(--primary-orange);
-            border-color: var(--primary-orange);
-            color: #000;
-            font-weight: 700;
-            box-shadow: 0 0 12px var(--primary-orange-glow);
+            color: var(--primary-orange);
         }
 
-        .print-btn {
-            margin-left: auto;
-            background: #222;
-            border: 1px solid #444;
-            color: #FFF;
+        .tab-btn.active::after {
+            background-color: var(--primary-orange);
+            box-shadow: 0 0 10px var(--primary-orange);
         }
+
+        .print-btn { margin-left: auto; color: #FFF;}
 
         /* MAIN CONTENT */
         main {
             max-width: 1000px;
-            margin: 24px auto;
+            margin: 32px auto;
             padding: 0 16px;
         }
 
-        .tab-content { display: none; }
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
         .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* QUICK TIMER LINKS BANNER */
         .timer-banner {
-            background: linear-gradient(90deg, #18181C 0%, #101014 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 16px;
-            margin-bottom: 24px;
+            background: rgba(255, 85, 0, 0.05);
+            border: 1px solid rgba(255, 85, 0, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 32px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
+            gap: 16px;
         }
 
         .timer-info h3 {
             font-family: var(--font-heading);
-            font-size: 16px;
+            font-size: 18px;
             color: #FFF;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -214,84 +222,83 @@
         .timer-info p {
             font-size: 13px;
             color: var(--text-muted);
+            margin-top: 4px;
         }
 
         .timer-link-btn {
-            background: var(--primary-orange);
+            background: #FFF;
             color: #000;
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 10px 24px;
+            border-radius: 8px;
             font-family: var(--font-heading);
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 14px;
             text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.1);
         }
 
         .timer-link-btn:hover {
-            background: #e64d00;
-            box-shadow: 0 0 10px var(--primary-orange-glow);
+            background: var(--primary-orange);
+            color: #FFF;
+            box-shadow: 0 0 20px var(--primary-orange-glow);
         }
 
         /* SECTION HEADERS */
         .session-header {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 32px;
         }
 
         .session-tag {
-            font-family: var(--font-heading);
+            font-family: var(--font-mono);
             font-size: 12px;
-            font-weight: 700;
             letter-spacing: 2px;
             color: var(--primary-orange);
-            text-transform: uppercase;
-            margin-bottom: 4px;
-        }
-
-        .session-title {
-            font-family: var(--font-heading);
-            font-size: 24px;
-            color: #FFF;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
 
+        .session-title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         /* BLOCK CARDS */
-        .block-section { margin-bottom: 28px; }
+        .block-section { margin-bottom: 40px; }
 
         .block-title {
             font-family: var(--font-heading);
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #FFF;
-            margin-bottom: 12px;
-            border-left: 3px solid var(--primary-orange);
-            padding-left: 10px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--primary-orange);
+            padding-left: 12px;
         }
 
         .exercise-grid {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 16px;
         }
 
         .exercise-card {
             background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 16px;
+            padding: 24px;
             position: relative;
         }
 
         .exercise-card.superset-card {
-            border-left: 3px solid var(--accent-amber);
+            border-left: 4px solid var(--accent-amber);
         }
 
         .exercise-header {
@@ -299,43 +306,42 @@
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-color);
         }
 
         .exercise-name {
             font-family: var(--font-heading);
             font-size: 18px;
-            font-weight: 500;
             letter-spacing: 0.5px;
             color: #FFF;
+            text-transform: uppercase;
         }
 
         .exercise-badge {
-            background: #000;
+            background: rgba(255,255,255,0.05);
             border: 1px solid var(--border-color);
             color: var(--text-muted);
-            font-size: 11px;
+            font-size: 10px;
             padding: 4px 10px;
-            border-radius: 4px;
-            font-family: var(--font-heading);
+            border-radius: 50px;
+            font-family: var(--font-mono);
             text-transform: uppercase;
             letter-spacing: 1px;
             white-space: nowrap;
         }
 
-        /* NEW 4-POINT LIST STYLING */
+        /* CLINICAL DETAIL STYLING */
         .detail-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 12px;
             font-size: 14px;
+            margin-bottom: 20px;
         }
 
         .detail-row {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
         }
 
         .detail-icon {
@@ -346,7 +352,10 @@
 
         .detail-content strong {
             color: #FFF;
-            font-weight: 600;
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 4px;
         }
 
         .detail-content {
@@ -354,73 +363,95 @@
             line-height: 1.5;
         }
 
-        /* DOSE BOX STYLING */
-        .dose-box {
-            background: #000;
+        /* DATA / DOSE BOX STYLING */
+        .dose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+            background: rgba(0,0,0,0.4);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 10px 14px;
-            margin-top: 4px;
-            display: inline-flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            align-items: center;
+            border-radius: 8px;
+            padding: 12px;
         }
 
         .dose-item {
             display: flex;
-            align-items: center;
-            gap: 6px;
+            flex-direction: column;
+            gap: 2px;
         }
 
         .dose-label {
-            font-family: var(--font-heading);
+            font-family: var(--font-mono);
             color: var(--primary-orange);
-            font-size: 12px;
+            font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .dose-value {
             color: #FFF;
-            font-weight: 600;
-            font-size: 14px;
+            font-family: var(--font-heading);
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        /* SPECIAL ENGINE CARDS */
+        .engine-card {
+            background: linear-gradient(135deg, rgba(255,85,0,0.1) 0%, rgba(20,20,23,0.8) 100%);
+            border: 1px solid var(--primary-orange);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        
+        .engine-title {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            color: var(--primary-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         /* CO2 GUIDELINES & HABITS */
         .guide-box {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
+            border-radius: 16px;
+            padding: 24px;
         }
 
-        .status-red { color: var(--accent-red); font-family: var(--font-heading); text-transform: uppercase; font-size: 16px;}
-        .status-amber { color: var(--accent-amber); font-family: var(--font-heading); text-transform: uppercase; font-size: 16px;}
-        .status-green { color: var(--accent-green); font-family: var(--font-heading); text-transform: uppercase; font-size: 16px;}
-        .status-orange { color: var(--primary-orange); font-family: var(--font-heading); text-transform: uppercase; font-size: 16px;}
+        .status-red { color: var(--accent-red); font-family: var(--font-heading); text-transform: uppercase; font-size: 18px; letter-spacing: 1px;}
+        .status-amber { color: var(--accent-amber); font-family: var(--font-heading); text-transform: uppercase; font-size: 18px; letter-spacing: 1px;}
+        .status-green { color: var(--accent-green); font-family: var(--font-heading); text-transform: uppercase; font-size: 18px; letter-spacing: 1px;}
+        .status-orange { color: var(--primary-orange); font-family: var(--font-heading); text-transform: uppercase; font-size: 18px; letter-spacing: 1px;}
 
         footer {
             max-width: 1000px;
             margin: 40px auto 0;
-            padding: 20px 16px;
+            padding: 24px 16px;
             text-align: center;
             border-top: 1px solid var(--border-color);
-            font-size: 12px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 1px;
             color: var(--text-muted);
+            text-transform: uppercase;
         }
 
         @media print {
-            body { background-color: #FFF !important; color: #000 !important; }
+            body { background-color: #FFF !important; color: #000 !important; background-image: none !important;}
             header, .nav-container, .timer-banner, .print-btn, footer { display: none !important; }
             .tab-content { display: block !important; page-break-after: always; }
-            .session-header { background: #F4F4F6 !important; border: 1px solid #DDD !important; color: #000 !important; }
-            .session-title, .exercise-name, .block-title { color: #000 !important; }
+            .session-header { margin-top: 0; }
+            .session-title, .exercise-name, .block-title, .detail-content strong { color: #000 !important; }
             .exercise-card { background: #FFF !important; border: 1px solid #CCC !important; page-break-inside: avoid; }
             .detail-content { color: #333 !important; }
-            .dose-box { background: #EEE !important; border: 1px solid #AAA !important; }
+            .dose-grid { background: #F9F9F9 !important; border: 1px solid #AAA !important; }
             .dose-value { color: #000 !important; }
+            .engine-card { background: #FFF9F5 !important; border: 2px solid #FF5500 !important; }
         }
     </style>
 </head>
@@ -430,9 +461,9 @@
         <div class="header-container">
             <div class="brand-badge">
                 <img src="nlcpWHITE.png" alt="NLC Performance Logo" class="brand-logo-img" onerror="this.onerror=null; this.src='nlcpWHITE.jpg';">
-                <span class="brand-title">NLC Performance</span>
             </div>
             <h1>FUNCTION TIER <span>PROGRAMME</span></h1>
+            <div class="motto-bar">NLC PERFORMANCE // TACTICAL READINESS SYSTEM</div>
         </div>
     </header>
 
@@ -446,8 +477,8 @@
             <button class="tab-btn active" onclick="switchTab('session-a')">Session A</button>
             <button class="tab-btn" onclick="switchTab('session-b')">Session B</button>
             <button class="tab-btn" onclick="switchTab('session-c')">Session C</button>
-            <button class="tab-btn" onclick="switchTab('autoreg')">CO2 Guidelines</button>
-            <button class="tab-btn" onclick="switchTab('habits')">Daily Habits</button>
+            <button class="tab-btn" onclick="switchTab('autoreg')">CO2 Rules</button>
+            <button class="tab-btn" onclick="switchTab('habits')">Daily Protocol</button>
             <button class="tab-btn print-btn" onclick="window.print()">Print PDF</button>
         </div>
     </div>
@@ -456,10 +487,10 @@
         <!-- GLOBAL TIMER BANNER -->
         <div class="timer-banner">
             <div class="timer-info">
-                <h3>⚡ NLC Master Tactical Timer</h3>
-                <p>Launch the all-in-one timer for EXTREME ISO, Q&D, AXE, and DFW protocols.</p>
+                <h3>⚡ Tactical Master Timer</h3>
+                <p>Launch the all-in-one timer for Extreme ISO, Q&D, AXE, and DFW protocols.</p>
             </div>
-            <a href="master-timer.html" target="_blank" class="timer-link-btn">Launch Master Timer</a>
+            <a href="https://nlcperformance.github.io/TRS-Master-Timer/" target="_blank" class="timer-link-btn">Launch Timer</a>
         </div>
 
         <!-- ==================== SESSION A ==================== -->
@@ -485,17 +516,14 @@
                             </div>
                             <div class="detail-row">
                                 <span class="detail-icon">📐</span>
-                                <div class="detail-content"><strong>Cues:</strong> Rub jawline/ribs for glutes, and belly button radius for psoas. 30s eye flicks between thumbs.</div>
+                                <div class="detail-content"><strong>Cues:</strong> Vigorously rub jawline/ribs for glutes, and belly button radius for psoas. 30s eye flicks between thumbs.</div>
                             </div>
-                            <div class="detail-row">
-                                <span class="detail-icon">✅</span>
-                                <div class="detail-content"><strong>Standard:</strong> Deep diaphragmatic breathing achieved; posture feels light.</div>
-                            </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1-3 Mins</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">None</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1 Flow</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">1 - 3 Mins</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">N/A</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">None</span></div>
                         </div>
                     </div>
 
@@ -513,11 +541,12 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Stiff knees, bounce off the balls of the feet. Minimal ground contact time.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">5s Neutral, 5s Toes In, 5s Toes Out</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">None</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1</span></div>
+                            <div class="dose-item"><span class="dose-label">Reps</span> <span class="dose-value">N/A</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">5s Neutral, 5s In, 5s Out</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">Transition</span></div>
                         </div>
                     </div>
                 </div>
@@ -541,12 +570,12 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Hover chest 2 inches off floor. Actively "pull" hands together into the floor.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Max Intent</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">60 Seconds</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Max Intent</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">60s</span></div>
                         </div>
                     </div>
 
@@ -564,12 +593,12 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Back knee 2 inches off floor. Torso vertical. Smooth force ramp up.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per leg</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Max Intent</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1 / Leg</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">60 Seconds</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Max Intent</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">60s</span></div>
                         </div>
                     </div>
 
@@ -587,12 +616,12 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Barefoot. Drive ball of foot into ground, raise heel 1 inch. Knee locked.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per side</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Max Intent</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1 / Leg</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">60 Seconds</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Max Intent</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">60s</span></div>
                         </div>
                     </div>
                 </div>
@@ -616,12 +645,12 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Step off 6" box. Silent landing ("eggshell heels"). Freeze for 2s.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">4</span></div>
-                                <div class="dose-item"><span class="dose-label">Reps:</span> <span class="dose-value">10</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Speed/Form</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">4</span></div>
+                            <div class="dose-item"><span class="dose-label">Reps</span> <span class="dose-value">10</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Speed / Form</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">60s</span></div>
                         </div>
                     </div>
 
@@ -637,14 +666,14 @@
                             </div>
                             <div class="detail-row">
                                 <span class="detail-icon">📐</span>
-                                <div class="detail-content"><strong>Cues:</strong> Palms against forehead/behind head. Press head into hands, neutral spine.</div>
+                                <div class="detail-content"><strong>Cues:</strong> Palms against head. Press head into hands, neutral spine.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">4</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">30s</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Moderate</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">4</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">30 Seconds</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Moderate</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">60s</span></div>
                         </div>
                     </div>
                 </div>
@@ -668,12 +697,12 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Dead hang start. Drive elbows down. No swinging.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">3</span></div>
-                                <div class="dose-item"><span class="dose-label">Reps:</span> <span class="dose-value">2</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">8</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">Nasal Recovery</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1 - 3 (Auto)</span></div>
+                            <div class="dose-item"><span class="dose-label">Reps</span> <span class="dose-value">2</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">8</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">Nasal Rec.</span></div>
                         </div>
                     </div>
 
@@ -691,12 +720,12 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Heels on step edge. Lower toes into deep stretch, flex straight up.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">3</span></div>
-                                <div class="dose-item"><span class="dose-label">Reps:</span> <span class="dose-value">10</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">7</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1 - 3 (Auto)</span></div>
+                            <div class="dose-item"><span class="dose-label">Reps</span> <span class="dose-value">10</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">7</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">60s</span></div>
                         </div>
                     </div>
                 </div>
@@ -706,9 +735,7 @@
             <div class="block-section">
                 <div class="block-title">Block 5: StrongFirst Engine</div>
                 <div class="engine-card">
-                    <div class="engine-header">
-                        <div class="engine-title">⚡ Quick & The Dead (Q&D)</div>
-                    </div>
+                    <div class="engine-title">⚡ Quick & The Dead (Q&D)</div>
                     <div class="detail-grid">
                         <div class="detail-row">
                             <span class="detail-icon">🎯</span>
@@ -718,16 +745,16 @@
                             <span class="detail-icon">📐</span>
                             <div class="detail-content"><strong>Movement:</strong> Single-Arm Kettlebell Snatch OR Power Swings.</div>
                         </div>
-                        <div class="dose-box">
-                            <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">2-4 Series of 5</span></div>
-                            <div class="dose-item"><span class="dose-label">Work:</span> <span class="dose-value">10s (Max Intent)</span></div>
-                            <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">50s</span></div>
-                            <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Power</span></div>
-                        </div>
                         <div class="detail-row" style="margin-top: 8px;">
                             <span class="detail-icon">🛑</span>
-                            <div class="detail-content"><strong>Stop Rule:</strong> Terminate if bell speed drops or nasal breathing breaks.</div>
+                            <div class="detail-content"><strong>Stop Rule:</strong> Terminate immediately if bell speed drops or nasal breathing breaks.</div>
                         </div>
+                    </div>
+                    <div class="dose-grid">
+                        <div class="dose-item"><span class="dose-label">Series</span> <span class="dose-value">2 - 4</span></div>
+                        <div class="dose-item"><span class="dose-label">Bursts</span> <span class="dose-value">5 / Series</span></div>
+                        <div class="dose-item"><span class="dose-label">Work</span> <span class="dose-value">10s Max</span></div>
+                        <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">50s Nasal</span></div>
                     </div>
                 </div>
             </div>
@@ -750,11 +777,11 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> One-handed passive bar hang (feet on floor) 1 min per arm. Follow with 1:4:2 nasal breathing.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">3 Mins</span></div>
-                                <div class="dose-item"><span class="dose-label">Protocol:</span> <span class="dose-value">Inhale 4s, Hold 16s, Exhale 8s</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">3 Mins</span></div>
+                            <div class="dose-item"><span class="dose-label">Tempo</span> <span class="dose-value">4s In, 16s Hold, 8s Out</span></div>
                         </div>
                     </div>
                 </div>
@@ -786,10 +813,10 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Vigorously rub jawline/ribs. Perform 30s eye flicks between thumbs.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1-3 Mins</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1 Flow</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">1 - 3 Mins</span></div>
                         </div>
                     </div>
 
@@ -807,10 +834,10 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Stiff knees, bounce off the balls of the feet.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">5s Neutral, 5s In, 5s Out</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">5s Neutral, 5s In, 5s Out</span></div>
                         </div>
                     </div>
                 </div>
@@ -834,11 +861,11 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Hover chest 2 inches off floor. Actively "pull" hands together.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Max Intent</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">60 Seconds</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Max Intent</span></div>
                         </div>
                     </div>
 
@@ -856,10 +883,11 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Back knee 2 inches off floor. Torso vertical.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per leg</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1 / Leg</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">60 Seconds</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Max Intent</span></div>
                         </div>
                     </div>
 
@@ -877,10 +905,11 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Barefoot. Drive ball of foot down, raise heel. Knee locked.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per side</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1 / Leg</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">60 Seconds</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Max Intent</span></div>
                         </div>
                     </div>
                 </div>
@@ -904,12 +933,12 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Stand sideways. Load back hip, violently rotate and slam ball.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">4</span></div>
-                                <div class="dose-item"><span class="dose-label">Reps:</span> <span class="dose-value">10 per side</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Speed/Power</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">4</span></div>
+                            <div class="dose-item"><span class="dose-label">Reps</span> <span class="dose-value">10 / Side</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Speed / Power</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">60s</span></div>
                         </div>
                     </div>
                 </div>
@@ -919,9 +948,7 @@
             <div class="block-section">
                 <div class="block-title">Block 4: StrongFirst Engine</div>
                 <div class="engine-card">
-                    <div class="engine-header">
-                        <div class="engine-title">🪓 Kettlebell AXE Protocol</div>
-                    </div>
+                    <div class="engine-title">🪓 Kettlebell AXE Protocol</div>
                     <div class="detail-grid">
                         <div class="detail-row">
                             <span class="detail-icon">🎯</span>
@@ -931,16 +958,16 @@
                             <span class="detail-icon">📐</span>
                             <div class="detail-content"><strong>Movement:</strong> Single KB Hand-to-Hand Swings or Snatches.</div>
                         </div>
-                        <div class="dose-box">
-                            <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">10 to 30 Mins</span></div>
-                            <div class="dose-item"><span class="dose-label">Format:</span> <span class="dose-value">EMOM</span></div>
-                            <div class="dose-item"><span class="dose-label">Work:</span> <span class="dose-value">4-6 Max Intent Reps</span></div>
-                            <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">Remaining 52s</span></div>
-                        </div>
                         <div class="detail-row" style="margin-top: 8px;">
                             <span class="detail-icon">🛑</span>
-                            <div class="detail-content"><strong>Stop Rule:</strong> Abort if rep speed slows, form breaks, or mouth breathing is needed.</div>
+                            <div class="detail-content"><strong>Stop Rule:</strong> Abort immediately if rep speed slows, form breaks, or mouth breathing is needed.</div>
                         </div>
+                    </div>
+                    <div class="dose-grid">
+                        <div class="dose-item"><span class="dose-label">Format</span> <span class="dose-value">EMOM</span></div>
+                        <div class="dose-item"><span class="dose-label">Total Time</span> <span class="dose-value">10 - 30 Mins</span></div>
+                        <div class="dose-item"><span class="dose-label">Work</span> <span class="dose-value">4 - 6 Reps (< 8s)</span></div>
+                        <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">~ 52s Nasal</span></div>
                     </div>
                 </div>
             </div>
@@ -971,10 +998,10 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Vigorously rub jawline/ribs. Perform 30s eye flicks between thumbs.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1-3 Mins</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1 Flow</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">1 - 3 Mins</span></div>
                         </div>
                     </div>
 
@@ -992,10 +1019,10 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Stiff knees, bounce off the balls of the feet.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">5s Neutral, 5s In, 5s Out</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">5s Neutral, 5s In, 5s Out</span></div>
                         </div>
                     </div>
                 </div>
@@ -1019,53 +1046,33 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Hover chest 2 inches off floor. Actively "pull" hands together.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Max Intent</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">60 Seconds</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Max Intent</span></div>
                         </div>
                     </div>
 
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Quads & Patellar] Isometric Split Squat</div>
+                            <div class="exercise-name">[Glutes & Posterior] Glute Bridge Hold</div>
                             <div class="exercise-badge">Iso Hold</div>
                         </div>
                         <div class="detail-grid">
                             <div class="detail-row">
                                 <span class="detail-icon">🎯</span>
-                                <div class="detail-content"><strong>Why:</strong> Flushes joint inflammation and rebuilds density.</div>
+                                <div class="detail-content"><strong>Why:</strong> Reactivates primary hip extenders to relieve back stress.</div>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-icon">📐</span>
-                                <div class="detail-content"><strong>Cues:</strong> Back knee 2 inches off floor. Torso vertical.</div>
-                            </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per leg</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
+                                <div class="detail-content"><strong>Cues:</strong> Dig heels into floor, drive big toes down, full hip extension.</div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="exercise-card">
-                        <div class="exercise-header">
-                            <div class="exercise-name">[Achilles] Spring Ankle Hold - Level 1</div>
-                            <div class="exercise-badge">Iso Hold</div>
-                        </div>
-                        <div class="detail-grid">
-                            <div class="detail-row">
-                                <span class="detail-icon">🎯</span>
-                                <div class="detail-content"><strong>Why:</strong> Builds foot stiffness for acceleration.</div>
-                            </div>
-                            <div class="detail-row">
-                                <span class="detail-icon">📐</span>
-                                <div class="detail-content"><strong>Cues:</strong> Barefoot. Drive ball of foot down, raise heel. Knee locked.</div>
-                            </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per side</span></div>
-                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
-                            </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">1</span></div>
+                            <div class="dose-item"><span class="dose-label">Time</span> <span class="dose-value">60 Seconds</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">Max Intent</span></div>
                         </div>
                     </div>
                 </div>
@@ -1075,9 +1082,7 @@
             <div class="block-section">
                 <div class="block-title">Block 3: StrongFirst Engine (Strength)</div>
                 <div class="engine-card">
-                    <div class="engine-header">
-                        <div class="engine-title">🏋️ Dry Fighting Weight (DFW) Protocol</div>
-                    </div>
+                    <div class="engine-title">🏋️ Dry Fighting Weight (DFW)</div>
                     <div class="detail-grid">
                         <div class="detail-row">
                             <span class="detail-icon">🎯</span>
@@ -1087,14 +1092,14 @@
                             <span class="detail-icon">📐</span>
                             <div class="detail-content"><strong>Movement:</strong> Double (or Single) KB Clean & Press + Front Squat.</div>
                         </div>
-                        <div class="dose-box">
-                            <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">20 - 30 Mins</span></div>
-                            <div class="dose-item"><span class="dose-label">Format:</span> <span class="dose-value">Ladders (1, 2, 3 reps)</span></div>
-                        </div>
                         <div class="detail-row" style="margin-top: 8px;">
                             <span class="detail-icon">🛑</span>
-                            <div class="detail-content"><strong>Rule:</strong> Step up to the bell ONLY when nasal breathing is under control.</div>
+                            <div class="detail-content"><strong>Rule:</strong> Step up to the bell ONLY when nasal breathing is completely recovered.</div>
                         </div>
+                    </div>
+                    <div class="dose-grid">
+                        <div class="dose-item"><span class="dose-label">Format</span> <span class="dose-value">Ladders (1, 2, 3)</span></div>
+                        <div class="dose-item"><span class="dose-label">Total Time</span> <span class="dose-value">20 - 30 Mins</span></div>
                     </div>
                 </div>
             </div>
@@ -1117,12 +1122,12 @@
                                 <span class="detail-icon">📐</span>
                                 <div class="detail-content"><strong>Cues:</strong> Walk tall. Zero side-leaning.</div>
                             </div>
-                            <div class="dose-box">
-                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">3</span></div>
-                                <div class="dose-item"><span class="dose-label">Distance:</span> <span class="dose-value">40m per side</span></div>
-                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">8</span></div>
-                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
-                            </div>
+                        </div>
+                        <div class="dose-grid">
+                            <div class="dose-item"><span class="dose-label">Sets</span> <span class="dose-value">3</span></div>
+                            <div class="dose-item"><span class="dose-label">Distance</span> <span class="dose-value">40m / Side</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE</span> <span class="dose-value">8</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest</span> <span class="dose-value">60s</span></div>
                         </div>
                     </div>
                 </div>
@@ -1178,20 +1183,20 @@
                 
                 <div class="exercise-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
                     <div class="guide-box" style="margin-bottom: 0; text-align: center;">
-                        <div class="status-green text-3xl mb-1">1</div>
-                        <div class="font-bold text-white mb-2">OPTIMAL</div>
+                        <div class="status-green text-4xl mb-1">1</div>
+                        <div class="font-bold text-white mb-2 font-heading tracking-wider">OPTIMAL</div>
                         <div class="detail-content text-sm">Zero joint pain. Feeling springy & fully recovered.</div>
                     </div>
 
                     <div class="guide-box" style="margin-bottom: 0; text-align: center;">
-                        <div class="status-amber text-3xl mb-1">2</div>
-                        <div class="font-bold text-white mb-2">TIGHTNESS</div>
+                        <div class="status-amber text-4xl mb-1">2</div>
+                        <div class="font-bold text-white mb-2 font-heading tracking-wider">TIGHTNESS</div>
                         <div class="detail-content text-sm">Mild joint tightness or heavy muscles. Standard fatigue.</div>
                     </div>
 
                     <div class="guide-box" style="margin-bottom: 0; text-align: center;">
-                        <div class="status-red text-3xl mb-1">3</div>
-                        <div class="font-bold text-white mb-2">FLARED UP</div>
+                        <div class="status-red text-4xl mb-1">3</div>
+                        <div class="font-bold text-white mb-2 font-heading tracking-wider">FLARED UP</div>
                         <div class="detail-content text-sm">Flared-up joint pain. Need a profile override.</div>
                     </div>
                 </div>
