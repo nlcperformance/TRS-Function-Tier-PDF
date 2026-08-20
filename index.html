@@ -18,7 +18,6 @@
             --primary-orange-glow: rgba(255, 85, 0, 0.2);
             --text-main: #F4F4F6;
             --text-muted: #9E9EA8;
-            --text-dark: #121214;
             --accent-green: #10B981;
             --accent-amber: #F59E0B;
             --accent-red: #EF4444;
@@ -47,7 +46,6 @@
             border-bottom: 1px solid var(--border-color);
             padding: 24px 16px;
             text-align: center;
-            position: relative;
         }
 
         .header-container {
@@ -88,7 +86,7 @@
 
         h1 {
             font-family: var(--font-heading);
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -99,19 +97,27 @@
             color: var(--primary-orange);
         }
 
-        .subtitle {
-            font-size: 14px;
-            color: var(--text-muted);
-            max-width: 600px;
+        /* RPE LEGEND BANNER */
+        .rpe-legend {
+            background: #18181C;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-orange);
+            max-width: 1000px;
+            margin: 20px auto 0;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .motto-bar {
+        .rpe-legend strong {
             font-family: var(--font-heading);
-            font-size: 11px;
-            letter-spacing: 4px;
             color: var(--primary-orange);
             text-transform: uppercase;
-            margin-top: 4px;
+            letter-spacing: 1px;
+            font-size: 15px;
         }
 
         /* NAVIGATION TABS */
@@ -123,6 +129,7 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             padding: 12px 16px;
+            margin-top: 16px;
         }
 
         .nav-tabs {
@@ -134,9 +141,7 @@
             scrollbar-width: none;
         }
 
-        .nav-tabs::-webkit-scrollbar {
-            display: none;
-        }
+        .nav-tabs::-webkit-scrollbar { display: none; }
 
         .tab-btn {
             background: var(--bg-card);
@@ -145,14 +150,13 @@
             padding: 10px 18px;
             border-radius: 8px;
             font-family: var(--font-heading);
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 500;
             cursor: pointer;
             white-space: nowrap;
             transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .tab-btn:hover {
@@ -164,6 +168,7 @@
             background: var(--primary-orange);
             border-color: var(--primary-orange);
             color: #000;
+            font-weight: 700;
             box-shadow: 0 0 12px var(--primary-orange-glow);
         }
 
@@ -174,26 +179,20 @@
             color: #FFF;
         }
 
-        /* MAIN CONTENT AREA */
+        /* MAIN CONTENT */
         main {
             max-width: 1000px;
             margin: 24px auto;
             padding: 0 16px;
         }
 
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
 
         /* QUICK TIMER LINKS BANNER */
         .timer-banner {
             background: linear-gradient(90deg, #18181C 0%, #101014 100%);
             border: 1px solid var(--border-color);
-            border-left: 4px solid var(--primary-orange);
             border-radius: 10px;
             padding: 16px;
             margin-bottom: 24px;
@@ -206,41 +205,33 @@
 
         .timer-info h3 {
             font-family: var(--font-heading);
-            font-size: 15px;
+            font-size: 16px;
             color: #FFF;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .timer-info p {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-muted);
         }
 
-        .timer-links {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
         .timer-link-btn {
-            background: #000;
-            border: 1px solid var(--primary-orange);
-            color: var(--primary-orange);
-            padding: 6px 12px;
+            background: var(--primary-orange);
+            color: #000;
+            padding: 8px 16px;
             border-radius: 6px;
             font-family: var(--font-heading);
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 700;
             text-decoration: none;
+            text-transform: uppercase;
             transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
         }
 
         .timer-link-btn:hover {
-            background: var(--primary-orange);
-            color: #000;
+            background: #e64d00;
+            box-shadow: 0 0 10px var(--primary-orange-glow);
         }
 
         /* SECTION HEADERS */
@@ -254,7 +245,7 @@
 
         .session-tag {
             font-family: var(--font-heading);
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
             letter-spacing: 2px;
             color: var(--primary-orange);
@@ -264,43 +255,23 @@
 
         .session-title {
             font-family: var(--font-heading);
-            font-size: 22px;
+            font-size: 24px;
             color: #FFF;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
 
-        .session-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            font-size: 12px;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            padding-top: 12px;
-            margin-top: 12px;
-        }
-
-        .meta-item strong {
-            color: #FFF;
-        }
-
         /* BLOCK CARDS */
-        .block-section {
-            margin-bottom: 28px;
-        }
+        .block-section { margin-bottom: 28px; }
 
         .block-title {
             font-family: var(--font-heading);
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #FFF;
             margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
             border-left: 3px solid var(--primary-orange);
             padding-left: 10px;
         }
@@ -311,18 +282,12 @@
             gap: 12px;
         }
 
-        /* 4-POINT TEMPLATE EXERCISE CARD */
         .exercise-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 16px;
-            transition: border-color 0.2s ease;
+            padding: 20px;
             position: relative;
-        }
-
-        .exercise-card:hover {
-            border-color: #383842;
         }
 
         .exercise-card.superset-card {
@@ -333,92 +298,97 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 12px;
-            gap: 10px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .exercise-name {
             font-family: var(--font-heading);
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
             color: #FFF;
         }
 
         .exercise-badge {
             background: #000;
             border: 1px solid var(--border-color);
-            color: var(--primary-orange);
-            font-size: 10px;
-            font-weight: 700;
-            padding: 3px 8px;
+            color: var(--text-muted);
+            font-size: 11px;
+            padding: 4px 10px;
             border-radius: 4px;
             font-family: var(--font-heading);
             text-transform: uppercase;
+            letter-spacing: 1px;
             white-space: nowrap;
         }
 
-        /* 4-LINE SPECIFIC LIST */
-        .four-point-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            font-size: 13px;
+        /* NEW 4-POINT LIST STYLING */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            font-size: 14px;
         }
 
-        .point-item {
+        .detail-row {
             display: flex;
             align-items: flex-start;
-            gap: 8px;
-            line-height: 1.4;
+            gap: 10px;
         }
 
-        .point-icon {
-            font-size: 14px;
+        .detail-icon {
+            font-size: 16px;
             flex-shrink: 0;
-            margin-top: 1px;
+            margin-top: 2px;
         }
 
-        .point-label {
-            font-weight: 700;
+        .detail-content strong {
             color: #FFF;
-            flex-shrink: 0;
-        }
-
-        .point-text {
-            color: var(--text-muted);
-        }
-
-        .point-text highlight {
-            color: var(--primary-orange);
             font-weight: 600;
         }
 
-        /* ENGINE / STRONGFIRST SPECIAL BOX */
-        .engine-card {
-            background: linear-gradient(135deg, rgba(255,85,0,0.08) 0%, rgba(20,20,23,1) 100%);
-            border: 1px solid var(--primary-orange);
-            border-radius: 10px;
-            padding: 18px;
-            margin-top: 8px;
+        .detail-content {
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
-        .engine-header {
-            display: flex;
-            justify-content: space-between;
+        /* DOSE BOX STYLING */
+        .dose-box {
+            background: #000;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-top: 4px;
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 16px;
             align-items: center;
-            margin-bottom: 12px;
         }
 
-        .engine-title {
+        .dose-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dose-label {
             font-family: var(--font-heading);
-            font-size: 17px;
-            font-weight: 700;
             color: var(--primary-orange);
+            font-size: 12px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* CO2 CALCULATOR & INTERACTIVE DASHBOARD */
-        .calc-box {
+        .dose-value {
+            color: #FFF;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* CO2 GUIDELINES & HABITS */
+        .guide-box {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 12px;
@@ -426,131 +396,11 @@
             margin-bottom: 24px;
         }
 
-        .calc-input-group {
-            display: flex;
-            gap: 12px;
-            margin: 16px 0;
-            flex-wrap: wrap;
-        }
+        .status-red { color: var(--accent-red); font-family: var(--font-heading); text-transform: uppercase; font-size: 16px;}
+        .status-amber { color: var(--accent-amber); font-family: var(--font-heading); text-transform: uppercase; font-size: 16px;}
+        .status-green { color: var(--accent-green); font-family: var(--font-heading); text-transform: uppercase; font-size: 16px;}
+        .status-orange { color: var(--primary-orange); font-family: var(--font-heading); text-transform: uppercase; font-size: 16px;}
 
-        .calc-input {
-            background: #000;
-            border: 1px solid var(--border-color);
-            color: #FFF;
-            padding: 12px;
-            border-radius: 8px;
-            font-family: var(--font-heading);
-            font-size: 16px;
-            width: 140px;
-        }
-
-        .calc-btn {
-            background: var(--primary-orange);
-            color: #000;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        .calc-result {
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            display: none;
-        }
-
-        .calc-result.red {
-            background: rgba(239, 68, 68, 0.15);
-            border: 1px solid var(--accent-red);
-            color: #FCA5A5;
-            display: block;
-        }
-
-        .calc-result.amber {
-            background: rgba(245, 158, 11, 0.15);
-            border: 1px solid var(--accent-amber);
-            color: #FCD34D;
-            display: block;
-        }
-
-        .calc-result.green {
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid var(--accent-green);
-            color: #6EE7B7;
-            display: block;
-        }
-
-        /* CHECK-IN SCALE CARD */
-        .checkin-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        .checkin-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 14px;
-            text-align: center;
-        }
-
-        .checkin-number {
-            font-family: var(--font-heading);
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .scale-1 { color: var(--accent-green); }
-        .scale-2 { color: var(--accent-amber); }
-        .scale-3 { color: var(--accent-red); }
-
-        /* DAILY HABIT TIMELINE */
-        .habit-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .habit-item {
-            display: flex;
-            gap: 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 14px;
-            align-items: center;
-        }
-
-        .habit-time {
-            font-family: var(--font-heading);
-            font-size: 12px;
-            color: var(--primary-orange);
-            font-weight: 700;
-            width: 80px;
-            flex-shrink: 0;
-        }
-
-        .habit-details h4 {
-            font-size: 14px;
-            color: #FFF;
-        }
-
-        .habit-details p {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* FOOTER */
         footer {
             max-width: 1000px;
             margin: 40px auto 0;
@@ -561,60 +411,21 @@
             color: var(--text-muted);
         }
 
-        /* PRINT OVERRIDES (@media print) */
         @media print {
-            body {
-                background-color: #FFF !important;
-                color: #000 !important;
-                font-size: 11pt;
-            }
-
-            header, .nav-container, .timer-banner, .print-btn, .calc-box, footer {
-                display: none !important;
-            }
-
-            .tab-content {
-                display: block !important;
-                page-break-after: always;
-            }
-
-            .session-header {
-                background: #F4F4F6 !important;
-                border: 1px solid #DDD !important;
-                color: #000 !important;
-            }
-
-            .session-title, .exercise-name, .block-title, .point-label {
-                color: #000 !important;
-            }
-
-            .exercise-card {
-                background: #FFF !important;
-                border: 1px solid #CCC !important;
-                page-break-inside: avoid;
-                margin-bottom: 8pt;
-            }
-
-            .point-text {
-                color: #333 !important;
-            }
-
-            .exercise-badge {
-                background: #EEE !important;
-                color: #000 !important;
-                border: 1px solid #AAA !important;
-            }
-
-            .engine-card {
-                background: #FFF9F5 !important;
-                border: 2px solid #FF5500 !important;
-            }
+            body { background-color: #FFF !important; color: #000 !important; }
+            header, .nav-container, .timer-banner, .print-btn, footer { display: none !important; }
+            .tab-content { display: block !important; page-break-after: always; }
+            .session-header { background: #F4F4F6 !important; border: 1px solid #DDD !important; color: #000 !important; }
+            .session-title, .exercise-name, .block-title { color: #000 !important; }
+            .exercise-card { background: #FFF !important; border: 1px solid #CCC !important; page-break-inside: avoid; }
+            .detail-content { color: #333 !important; }
+            .dose-box { background: #EEE !important; border: 1px solid #AAA !important; }
+            .dose-value { color: #000 !important; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="header-container">
             <div class="brand-badge">
@@ -622,37 +433,33 @@
                 <span class="brand-title">NLC Performance</span>
             </div>
             <h1>FUNCTION TIER <span>PROGRAMME</span></h1>
-            <div class="motto-bar">ADAPT • RECOVER • MASTER</div>
         </div>
     </header>
 
-    <!-- NAVIGATION TABS -->
+    <div class="rpe-legend">
+        <strong>RPE Scale:</strong> 
+        <span>Rate of Perceived Exertion (1-10). <strong>RPE 7</strong> = 3 reps in reserve. <strong>RPE 8</strong> = 2 reps in reserve. <strong>RPE 10</strong> = Max effort / Failure.</span>
+    </div>
+
     <div class="nav-container">
         <div class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab('session-a')">📋 Session A (Linear & Q&D)</button>
-            <button class="tab-btn" onclick="switchTab('session-b')">🌀 Session B (Rotational & AXE)</button>
-            <button class="tab-btn" onclick="switchTab('session-c')">🛡️ Session C (Armor & DFW)</button>
-            <button class="tab-btn" onclick="switchTab('autoreg')">📊 CO2 Dice Roll</button>
-            <button class="tab-btn" onclick="switchTab('habits')">🧠 Daily Habits & Scale</button>
-            <button class="tab-btn print-btn" onclick="window.print()">🖨️ Export PDF</button>
+            <button class="tab-btn active" onclick="switchTab('session-a')">Session A</button>
+            <button class="tab-btn" onclick="switchTab('session-b')">Session B</button>
+            <button class="tab-btn" onclick="switchTab('session-c')">Session C</button>
+            <button class="tab-btn" onclick="switchTab('autoreg')">CO2 Guidelines</button>
+            <button class="tab-btn" onclick="switchTab('habits')">Daily Habits</button>
+            <button class="tab-btn print-btn" onclick="window.print()">Print PDF</button>
         </div>
     </div>
 
-    <!-- MAIN CONTENT -->
     <main>
-
         <!-- GLOBAL TIMER BANNER -->
         <div class="timer-banner">
             <div class="timer-info">
-                <h3>⚡ NLC Digital Web Timers</h3>
-                <p>Launch live timers in your browser during your session for automatic timekeeping.</p>
+                <h3>⚡ NLC Master Tactical Timer</h3>
+                <p>Launch the all-in-one timer for EXTREME ISO, Q&D, AXE, and DFW protocols.</p>
             </div>
-            <div class="timer-links">
-                <a href="https://nlcperformance.github.io/NLC-Q-D-Timer/" target="_blank" class="timer-link-btn">⏱️ Q&D Timer</a>
-                <a href="https://nlcperformance.github.io/DFW-Dice-Roller/" target="_blank" class="timer-link-btn">🎲 DFW Roller</a>
-                <a href="https://nlcperformance.github.io/Breathwork-Timer/" target="_blank" class="timer-link-btn">🫁 Breathwork Timer</a>
-                <a href="https://nlcperformance.github.io/TRS-Guided-Recovery-Coach/" target="_blank" class="timer-link-btn">🛠️ Recovery Coach</a>
-            </div>
+            <a href="master-timer.html" target="_blank" class="timer-link-btn">Launch Master Timer</a>
         </div>
 
         <!-- ==================== SESSION A ==================== -->
@@ -660,63 +467,56 @@
             <div class="session-header">
                 <div class="session-tag">Microcycle Block // Session A</div>
                 <div class="session-title">Linear & Eccentric Load Focus</div>
-                <div class="session-meta">
-                    <div class="meta-item"><strong>Equipment:</strong> Kettlebell, Dumbbell, Pull-Up Bar</div>
-                    <div class="meta-item"><strong>Target Pace:</strong> Deterministic (Rest as instructed)</div>
-                    <div class="meta-item"><strong>Engine Integration:</strong> StrongFirst Q&D</div>
-                </div>
             </div>
 
             <!-- BLOCK 1: NEURO SWITCH -->
             <div class="block-section">
-                <div class="block-title">Block 1: Neurological Switch (RPR Warm-Up)</div>
+                <div class="block-title">Block 1: Neurological Switch</div>
                 <div class="exercise-grid">
                     <div class="exercise-card">
                         <div class="exercise-header">
                             <div class="exercise-name">[CNS & Slings] RPR Full Wake-Up Drill</div>
                             <div class="exercise-badge">Warm-Up</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Psoas, Glutes & Cervical Spine. Flips neurological switches to remove central compensation patterns before loading.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Activates primary muscles (glutes/psoas) and resets the nervous system before loading.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Vigorously rub jawline/ribs for glutes, and belly button radius for psoas. Perform 30s saccadic eye flicks between thumbs.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Rub jawline/ribs for glutes, and belly button radius for psoas. 30s eye flicks between thumbs.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">13 Minutes total continuous flow.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">✅</span>
+                                <div class="detail-content"><strong>Standard:</strong> Deep diaphragmatic breathing achieved; posture feels light.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">360° diaphragmatic expansion felt; posture feels upright and light.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1-3 Mins</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">None</span></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Lower Leg & Achilles] 3-Way Ankle Pogos</div>
+                            <div class="exercise-name">[Lower Leg] 3-Way Ankle Pogos</div>
                             <div class="exercise-badge">Warm-Up</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Calves & Achilles Tendon. Primes the lower leg stiffness and elastic recoil for the upcoming session.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Primes ankle stiffness and elasticity for force absorption.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Stiff knees, bounce off the balls of the feet. Minimal ground contact time.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Stiff knees, bounce off the balls of the feet. Minimal ground contact time.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">15 Seconds Total: 5s neutral foot, 5s toes pointed in, 5s toes pointed out.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Fast, springy contacts with no heel strike.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">5s Neutral, 5s Toes In, 5s Toes Out</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">None</span></div>
                             </div>
                         </div>
                     </div>
@@ -725,79 +525,73 @@
 
             <!-- BLOCK 2: ISOMETRICS -->
             <div class="block-section">
-                <div class="block-title">Block 2: Structural Isometrics (Armor Holds)</div>
+                <div class="block-title">Block 2: Structural Isometrics</div>
                 <div class="exercise-grid">
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Pecs & Anterior Core] Isometric Push-Up</div>
+                            <div class="exercise-name">[Pecs & Core] Isometric Push-Up</div>
                             <div class="exercise-badge">Iso Hold</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Pectorals, shoulders & core. Develops absolute upper-body structural stiffness and positional endurance.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Builds upper-body stability and positional endurance.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Hover chest 2 inches off the floor. Actively "pull" your hands together into the floor to maximize pec engagement.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Hover chest 2 inches off floor. Actively "pull" hands together into the floor.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">Hold 60 Seconds @ 40% effort → Rest 60s → 1 Set.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Rigid plank maintained; no hip sagging or shoulder shrugging.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Max Intent</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Quads & Patellar] Bodyweight Isometric Split Squat</div>
+                            <div class="exercise-name">[Quads & Patellar] Isometric Split Squat</div>
                             <div class="exercise-badge">Iso Hold</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Patellar tendon & Quad muscle belly. Rebuilds collagen density and flushes joint inflammation.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Strengthens tendons and flushes joint inflammation.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Back knee suspended 2 inches off floor. Torso 100% vertical. Weight split 50/50. Smooth 3s force ramp up.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Back knee 2 inches off floor. Torso vertical. Smooth force ramp up.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">Hold 60 Seconds per leg @ 40% effort → Rest 60s → 1 Set per side.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Stable posture, no early shake-out, zero sharp joint pain.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per leg</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Max Intent</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Ankles & Achilles] Spring Ankle Hold - Level 1</div>
+                            <div class="exercise-name">[Achilles] Spring Ankle Hold - Level 1</div>
                             <div class="exercise-badge">Iso Hold</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Achilles tendon & Plantar fascia. Builds foot stiffness for acceleration and landing absorption.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Builds foot arch strength for landing and acceleration.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Barefoot. Drive ball of foot into ground, raise heel 1 inch. Knee locked straight.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Barefoot. Drive ball of foot into ground, raise heel 1 inch. Knee locked.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">Hold 60 Seconds per side → Rest 60s → 1 Set.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Zero ankle collapse; solid foot arch engagement.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per side</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Max Intent</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
                             </div>
                         </div>
                     </div>
@@ -806,54 +600,50 @@
 
             <!-- BLOCK 3: BALLISTICS -->
             <div class="block-section">
-                <div class="block-title">Block 3: Ballistics & PAP (Superset x 4 Sets)</div>
+                <div class="block-title">Block 3: Ballistics (Superset)</div>
                 <div class="exercise-grid">
                     <div class="exercise-card superset-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">1A. [Lower Chain] 6" Altitude Depth Drop</div>
+                            <div class="exercise-name">1A. [Lower Chain] 6" Depth Drop</div>
                             <div class="exercise-badge">Ballistic</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Fast-twitch motor units (ACTN3). Teaches elastic force absorption under zero fatigue.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Teaches force absorption and landing mechanics safely.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Step off 6" box. Land in athletic stance with "eggshell heels" (silent impact, freeze 2s).</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Step off 6" box. Silent landing ("eggshell heels"). Freeze for 2s.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">10 Reps → Rest 60s before 1B.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Silent landing, zero knee caving (valgus), instant freeze.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">4</span></div>
+                                <div class="dose-item"><span class="dose-label">Reps:</span> <span class="dose-value">10</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Speed/Form</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="exercise-card superset-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">1B. [Cervical Spine] Isometric Neck Exercise (Front & Back)</div>
+                            <div class="exercise-name">1B. [Cervical Spine] Iso Neck (Front & Back)</div>
                             <div class="exercise-badge">Active Filler</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Cervical flexors & extensors. Dissipates kinetic shock to protect against concussion.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Protects the cervical spine and dissipates shock.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Palms against forehead/behind head. Press head into hands at 30% effort with neutral spine.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Palms against forehead/behind head. Press head into hands, neutral spine.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">30 Seconds hold → Rest 60s → Repeat Superset for 4 Sets.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Rigid neck posture; zero chin protrusion.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">4</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">30s</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Moderate</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
                             </div>
                         </div>
                     </div>
@@ -862,84 +652,81 @@
 
             <!-- BLOCK 4: CONCENTRICS -->
             <div class="block-section">
-                <div class="block-title">Block 4: Strength Concentrics & Active Fillers (3 Sets)</div>
+                <div class="block-title">Block 4: Strength Concentrics (Superset)</div>
                 <div class="exercise-grid">
                     <div class="exercise-card superset-card">
                         <div class="exercise-header">
                             <div class="exercise-name">2A. [Upper Pull] Bodyweight Pull-Ups</div>
                             <div class="exercise-badge">Concentric</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Lats & Scapular retractors. Builds absolute upper body pulling power and shoulder armor.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Builds absolute upper body pulling power and back strength.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Full dead hang start. Drive elbows down to ribs, chest to bar. No swinging or kicking.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Dead hang start. Drive elbows down. No swinging.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">2 to 3 Reps (Dice Roll adjusted) → Rest until breathing normal.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Crisp chin over bar; smooth controlled descent.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">3</span></div>
+                                <div class="dose-item"><span class="dose-label">Reps:</span> <span class="dose-value">2</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">8</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">Nasal Recovery</span></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="exercise-card superset-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">2B. [Shin & Knee] Bodyweight Deficit Tibialis Raise</div>
+                            <div class="exercise-name">2B. [Shin] Deficit Tibialis Raise</div>
                             <div class="exercise-badge">Active Filler</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Tibialis Anterior. Bulletproofs the front of the shin to decelerate impact and protect knees.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Bulletproofs the shin to protect knees during deceleration.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Heels on step edge. Lower toes into deep stretch, flex toes straight up to ceiling.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Heels on step edge. Lower toes into deep stretch, flex straight up.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">20 Reps → Rest 60s → Repeat Superset for 3 Sets.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Full ankle range of motion; intense tibialis contraction.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">3</span></div>
+                                <div class="dose-item"><span class="dose-label">Reps:</span> <span class="dose-value">10</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">7</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BLOCK 5: STRONGFIRST ENGINE INTEGRATION -->
+            <!-- BLOCK 5: STRONGFIRST ENGINE -->
             <div class="block-section">
-                <div class="block-title">Block 5: StrongFirst Engine (Alactic Conditioning)</div>
+                <div class="block-title">Block 5: StrongFirst Engine</div>
                 <div class="engine-card">
                     <div class="engine-header">
-                        <div class="engine-title">⚡ Quick & The Dead (Q&D) Protocol</div>
-                        <a href="https://nlcperformance.github.io/NLC-Q-D-Timer/" target="_blank" class="timer-link-btn">Launch Q&D Timer ➔</a>
+                        <div class="engine-title">⚡ Quick & The Dead (Q&D)</div>
                     </div>
-                    <div class="four-point-list">
-                        <div class="point-item">
-                            <span class="point-icon">🎯</span>
-                            <div><span class="point-label">Biological Objective:</span> <span class="point-text">Alactic Explosive Power (ATP-CP System). Zero lactic acid accumulation, preserving motor unit velocity.</span></div>
+                    <div class="detail-grid">
+                        <div class="detail-row">
+                            <span class="detail-icon">🎯</span>
+                            <div class="detail-content"><strong>Why:</strong> Alactic explosive power. Zero lactic acid accumulation.</div>
                         </div>
-                        <div class="point-item">
-                            <span class="point-icon">📐</span>
-                            <div><span class="point-label">Movement Selection:</span> <span class="point-text">Single-Arm Kettlebell Snatch OR Power Swings (Heavy Bell, RPE 7-8).</span></div>
+                        <div class="detail-row">
+                            <span class="detail-icon">📐</span>
+                            <div class="detail-content"><strong>Movement:</strong> Single-Arm Kettlebell Snatch OR Power Swings.</div>
                         </div>
-                        <div class="point-item">
-                            <span class="point-icon">⏱️</span>
-                            <div><span class="point-label">Dose & Pacing:</span> <span class="point-text"><highlight>10 Seconds Work (3-5 Max Intent Reps) → 50 Seconds Active Nasal Recovery.</highlight> Complete 2 to 4 Series of 5 Bursts (10-20 mins total).</span></div>
+                        <div class="dose-box">
+                            <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">2-4 Series of 5</span></div>
+                            <div class="dose-item"><span class="dose-label">Work:</span> <span class="dose-value">10s (Max Intent)</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">50s</span></div>
+                            <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Power</span></div>
                         </div>
-                        <div class="point-item">
-                            <span class="point-icon">✅</span>
-                            <div><span class="point-label">Stop Rule:</span> <span class="point-text">The exact second bell speed drops or nasal breathing breaks, terminate the session immediately.</span></div>
+                        <div class="detail-row" style="margin-top: 8px;">
+                            <span class="detail-icon">🛑</span>
+                            <div class="detail-content"><strong>Stop Rule:</strong> Terminate if bell speed drops or nasal breathing breaks.</div>
                         </div>
                     </div>
                 </div>
@@ -947,216 +734,212 @@
 
             <!-- BLOCK 6: VAGAL RESET -->
             <div class="block-section">
-                <div class="block-title">Block 6: Vagal Reset (Parasympathetic Shift)</div>
+                <div class="block-title">Block 6: Vagal Reset</div>
                 <div class="exercise-grid">
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Nervous System] Decompression Hang & 1:4:2 Breathing</div>
+                            <div class="exercise-name">[Nervous System] Decompression Hang & Breathing</div>
                             <div class="exercise-badge">Reset</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Spinal decompression & Vagus nerve. Down-regulates sympathetic adrenaline back to recovery state.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Spinal decompression and parasympathetic reset.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">One-handed passive bar hang (feet touched on floor for support) for 1 min per arm. Follow with 1:4:2 nasal breathing.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> One-handed passive bar hang (feet on floor) 1 min per arm. Follow with 1:4:2 nasal breathing.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">3 Minutes total breathwork (Inhale 4s → Hold 16s → Exhale 8s).</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Heart rate normalized; complete parasympathetic shift before leaving.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">3 Mins</span></div>
+                                <div class="dose-item"><span class="dose-label">Protocol:</span> <span class="dose-value">Inhale 4s, Hold 16s, Exhale 8s</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- ==================== SESSION B ==================== -->
         <div id="session-b" class="tab-content">
             <div class="session-header">
                 <div class="session-tag">Microcycle Block // Session B</div>
-                <div class="session-title">Rotational Chaos & Fluid Inertia Focus</div>
-                <div class="session-meta">
-                    <div class="meta-item"><strong>Equipment:</strong> Med Ball / Waterbag, Kettlebell, Resistance Band</div>
-                    <div class="meta-item"><strong>Target Pace:</strong> High Intent & Explosive</div>
-                    <div class="meta-item"><strong>Engine Integration:</strong> Kettlebell AXE</div>
-                </div>
+                <div class="session-title">Rotational Chaos & Fluid Inertia</div>
             </div>
 
-            <!-- BLOCK 0: NEURO SWITCH -->
+            <!-- BLOCK 1: NEURO SWITCH -->
             <div class="block-section">
-                <div class="block-title">Block 1: Neurological Switch (RPR Warm-Up)</div>
+                <div class="block-title">Block 1: Neurological Switch</div>
                 <div class="exercise-grid">
                     <div class="exercise-card">
                         <div class="exercise-header">
                             <div class="exercise-name">[CNS & Slings] RPR Full Wake-Up Drill</div>
                             <div class="exercise-badge">Warm-Up</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Psoas, Glutes & Cervical Spine. Flips neurological switches to remove central compensation patterns before loading.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Activates primary muscles and resets the nervous system.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Vigorously rub jawline/ribs for glutes, and belly button radius for psoas. Perform 30s saccadic eye flicks between thumbs.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Vigorously rub jawline/ribs. Perform 30s eye flicks between thumbs.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">13 Minutes total continuous flow.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">360° diaphragmatic expansion felt; posture feels upright and light.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1-3 Mins</span></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Lower Leg & Achilles] 3-Way Ankle Pogos</div>
+                            <div class="exercise-name">[Lower Leg] 3-Way Ankle Pogos</div>
                             <div class="exercise-badge">Warm-Up</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Calves & Achilles Tendon. Primes the lower leg stiffness and elastic recoil.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Primes ankle stiffness and elasticity.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Stiff knees, bounce off the balls of the feet. Minimal ground contact time.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Stiff knees, bounce off the balls of the feet.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">15 Seconds Total: 5s neutral foot, 5s toes pointed in, 5s toes pointed out.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Fast, springy contacts with no heel strike.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">5s Neutral, 5s In, 5s Out</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BLOCK 1: ISOMETRICS -->
+            <!-- BLOCK 2: ISOMETRICS -->
             <div class="block-section">
-                <div class="block-title">Block 2: Rotational Isometrics</div>
+                <div class="block-title">Block 2: Structural Isometrics</div>
                 <div class="exercise-grid">
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Pecs & Anterior Core] Isometric Push-Up</div>
+                            <div class="exercise-name">[Pecs & Core] Isometric Push-Up</div>
                             <div class="exercise-badge">Iso Hold</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Pectorals, shoulders & core. Develops absolute upper-body structural stiffness and positional endurance.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Builds absolute upper-body structural stiffness.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Hover chest 2 inches off the floor. Actively "pull" your hands together into the floor to maximize pec engagement.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Hover chest 2 inches off floor. Actively "pull" hands together.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">Hold 60 Seconds @ 40% effort → Rest 60s → 1 Set.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Rigid plank maintained; no hip sagging or shoulder shrugging.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Max Intent</span></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Core & Obliques] Banded Pallof Hold</div>
+                            <div class="exercise-name">[Quads & Patellar] Isometric Split Squat</div>
                             <div class="exercise-badge">Iso Hold</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Transverse Abdominis & QL. Builds anti-rotational core stiffness to transfer force cleanly.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Flushes joint inflammation and rebuilds density.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Athletic stance perpendicular to anchor. Press band straight out from sternum; lock arms.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Back knee 2 inches off floor. Torso vertical.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">Hold 60 Seconds per side → Rest 60s → 1 Set.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per leg</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Zero torso twisting; rock-solid core brace.</span></div>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">[Achilles] Spring Ankle Hold - Level 1</div>
+                            <div class="exercise-badge">Iso Hold</div>
+                        </div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Builds foot stiffness for acceleration.</div>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Barefoot. Drive ball of foot down, raise heel. Knee locked.</div>
+                            </div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per side</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BLOCK 2: BALLISTICS -->
+            <!-- BLOCK 3: BALLISTICS -->
             <div class="block-section">
-                <div class="block-title">Block 2: Rotational Chaos Ballistics</div>
+                <div class="block-title">Block 3: Rotational Ballistics</div>
                 <div class="exercise-grid">
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Spiral Sling] Medicine Ball Cross Body Throw</div>
+                            <div class="exercise-name">[Spiral Sling] Med Ball Cross Body Throw</div>
                             <div class="exercise-badge">Ballistic</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Posterior Oblique & Spiral Slings. Explosive rotational power for striking, passing, and throwing.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Explosive rotational power for striking and throwing.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Stand sideways 4ft from wall. Load back hip, violently rotate and slam ball into wall or floor.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Stand sideways. Load back hip, violently rotate and slam ball.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">10 Reps per side → Rest 60s → 4 Sets.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Maximum rotational hip drive; crisp ball velocity.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">4</span></div>
+                                <div class="dose-item"><span class="dose-label">Reps:</span> <span class="dose-value">10 per side</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Speed/Power</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BLOCK 3: ENGINE AXE -->
+            <!-- BLOCK 4: ENGINE AXE -->
             <div class="block-section">
-                <div class="block-title">Block 3: StrongFirst Engine (AXE Protocol)</div>
+                <div class="block-title">Block 4: StrongFirst Engine</div>
                 <div class="engine-card">
                     <div class="engine-header">
                         <div class="engine-title">🪓 Kettlebell AXE Protocol</div>
-                        <a href="https://nlcperformance.github.io/NLC-Q-D-Timer/" target="_blank" class="timer-link-btn">Launch AXE Timer ➔</a>
                     </div>
-                    <div class="four-point-list">
-                        <div class="point-item">
-                            <span class="point-icon">🎯</span>
-                            <div><span class="point-label">Biological Objective:</span> <span class="point-text">Anti-Glycolytic Type IIx Fiber Endurance. Repeat Sprint Ability (RSA) without mitochondrial damage.</span></div>
+                    <div class="detail-grid">
+                        <div class="detail-row">
+                            <span class="detail-icon">🎯</span>
+                            <div class="detail-content"><strong>Why:</strong> Anti-Glycolytic Endurance. Build work capacity without lactic damage.</div>
                         </div>
-                        <div class="point-item">
-                            <span class="point-icon">📐</span>
-                            <div><span class="point-label">Movement Selection:</span> <span class="point-text">Single Kettlebell Hand-to-Hand Swings OR Waterbag Slingshots.</span></div>
+                        <div class="detail-row">
+                            <span class="detail-icon">📐</span>
+                            <div class="detail-content"><strong>Movement:</strong> Single KB Hand-to-Hand Swings or Snatches.</div>
                         </div>
-                        <div class="point-item">
-                            <span class="point-icon">⏱️</span>
-                            <div><span class="point-label">Dose & Pacing:</span> <span class="point-text"><highlight>EMOM (Every Minute On the Minute): 5-6 Max Intent Swings in under 8 seconds. Rest remaining 52 seconds (Nasal breathing).</highlight> Execute 10 to 15 Sets (10-15 mins).</span></div>
+                        <div class="dose-box">
+                            <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">10 to 30 Mins</span></div>
+                            <div class="dose-item"><span class="dose-label">Format:</span> <span class="dose-value">EMOM</span></div>
+                            <div class="dose-item"><span class="dose-label">Work:</span> <span class="dose-value">4-6 Max Intent Reps</span></div>
+                            <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">Remaining 52s</span></div>
                         </div>
-                        <div class="point-item">
-                            <span class="point-icon">✅</span>
-                            <div><span class="point-label">Stop Rule:</span> <span class="point-text">Strictly terminate if rep time exceeds 8 seconds or mouth breathing is required.</span></div>
+                        <div class="detail-row" style="margin-top: 8px;">
+                            <span class="detail-icon">🛑</span>
+                            <div class="detail-content"><strong>Stop Rule:</strong> Abort if rep speed slows, form breaks, or mouth breathing is needed.</div>
                         </div>
                     </div>
                 </div>
@@ -1168,179 +951,177 @@
             <div class="session-header">
                 <div class="session-tag">Microcycle Block // Session C</div>
                 <div class="session-title">Armor & Kinetic Skill Focus</div>
-                <div class="session-meta">
-                    <div class="meta-item"><strong>Equipment:</strong> Kettlebells, Pull-Up Bar</div>
-                    <div class="meta-item"><strong>Target Pace:</strong> Autoregulated Density</div>
-                    <div class="meta-item"><strong>Engine Integration:</strong> StrongFirst DFW</div>
-                </div>
             </div>
 
-            <!-- BLOCK 0: NEURO SWITCH -->
+            <!-- BLOCK 1: NEURO SWITCH -->
             <div class="block-section">
-                <div class="block-title">Block 1: Neurological Switch (RPR Warm-Up)</div>
+                <div class="block-title">Block 1: Neurological Switch</div>
                 <div class="exercise-grid">
                     <div class="exercise-card">
                         <div class="exercise-header">
                             <div class="exercise-name">[CNS & Slings] RPR Full Wake-Up Drill</div>
                             <div class="exercise-badge">Warm-Up</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Psoas, Glutes & Cervical Spine. Flips neurological switches to remove central compensation patterns before loading.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Activates primary muscles and resets the nervous system.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Vigorously rub jawline/ribs for glutes, and belly button radius for psoas. Perform 30s saccadic eye flicks between thumbs.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Vigorously rub jawline/ribs. Perform 30s eye flicks between thumbs.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">13 Minutes total continuous flow.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">360° diaphragmatic expansion felt; posture feels upright and light.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1-3 Mins</span></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Lower Leg & Achilles] 3-Way Ankle Pogos</div>
+                            <div class="exercise-name">[Lower Leg] 3-Way Ankle Pogos</div>
                             <div class="exercise-badge">Warm-Up</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Calves & Achilles Tendon. Primes the lower leg stiffness and elastic recoil.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Primes ankle stiffness and elasticity.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Stiff knees, bounce off the balls of the feet. Minimal ground contact time.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Stiff knees, bounce off the balls of the feet.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">15 Seconds Total: 5s neutral foot, 5s toes pointed in, 5s toes pointed out.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Fast, springy contacts with no heel strike.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">5s Neutral, 5s In, 5s Out</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BLOCK 1: ISOMETRICS -->
+            <!-- BLOCK 2: ISOMETRICS -->
             <div class="block-section">
                 <div class="block-title">Block 2: Kinetic Armor Isometrics</div>
                 <div class="exercise-grid">
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Pecs & Anterior Core] Isometric Push-Up</div>
+                            <div class="exercise-name">[Pecs & Core] Isometric Push-Up</div>
                             <div class="exercise-badge">Iso Hold</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Pectorals, shoulders & core. Develops absolute upper-body structural stiffness and positional endurance.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Builds absolute upper-body structural stiffness.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Hover chest 2 inches off the floor. Actively "pull" your hands together into the floor to maximize pec engagement.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Hover chest 2 inches off floor. Actively "pull" hands together.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">Hold 60 Seconds @ 40% effort → Rest 60s → 1 Set.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Rigid plank maintained; no hip sagging or shoulder shrugging.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">Max Intent</span></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[Glutes & Posterior] Glute Bridge Hold</div>
+                            <div class="exercise-name">[Quads & Patellar] Isometric Split Squat</div>
                             <div class="exercise-badge">Iso Hold</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Gluteus Maximus & Hamstrings. Reactivates primary hip extenders to relieve lower back/piriformis stress.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Flushes joint inflammation and rebuilds density.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Supine position. Dig heels into floor, drive big toes down, raise hips into full extension.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Back knee 2 inches off floor. Torso vertical.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">Hold 60 Seconds → Rest 60s → 1 Set.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per leg</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Full hip lock out; zero hamstring cramping or lumbar arching.</span></div>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">[Achilles] Spring Ankle Hold - Level 1</div>
+                            <div class="exercise-badge">Iso Hold</div>
+                        </div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Builds foot stiffness for acceleration.</div>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Barefoot. Drive ball of foot down, raise heel. Knee locked.</div>
+                            </div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">1 per side</span></div>
+                                <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">1 Min</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BLOCK 2: CONCENTRICS DFW ENGINE -->
+            <!-- BLOCK 3: CONCENTRICS DFW ENGINE -->
             <div class="block-section">
-                <div class="block-title">Block 2: StrongFirst DFW Engine (Autoregulated Strength)</div>
+                <div class="block-title">Block 3: StrongFirst Engine (Strength)</div>
                 <div class="engine-card">
                     <div class="engine-header">
                         <div class="engine-title">🏋️ Dry Fighting Weight (DFW) Protocol</div>
-                        <a href="https://nlcperformance.github.io/DFW-Dice-Roller/" target="_blank" class="timer-link-btn">Launch DFW Roller ➔</a>
                     </div>
-                    <div class="four-point-list">
-                        <div class="point-item">
-                            <span class="point-icon">🎯</span>
-                            <div><span class="point-label">Biological Objective:</span> <span class="point-text">Absolute Force, Anterior Armor & Hyper-Dense Work Capacity.</span></div>
+                    <div class="detail-grid">
+                        <div class="detail-row">
+                            <span class="detail-icon">🎯</span>
+                            <div class="detail-content"><strong>Why:</strong> Builds dense strength and immense work capacity.</div>
                         </div>
-                        <div class="point-item">
-                            <span class="point-icon">📐</span>
-                            <div><span class="point-label">Exercise Pairings:</span> <span class="point-text">Double (or Single) Kettlebell Clean & Press + Kettlebell Goblet/Front Squat.</span></div>
+                        <div class="detail-row">
+                            <span class="detail-icon">📐</span>
+                            <div class="detail-content"><strong>Movement:</strong> Double (or Single) KB Clean & Press + Front Squat.</div>
                         </div>
-                        <div class="point-item">
-                            <span class="point-icon">⏱️</span>
-                            <div><span class="point-label">Structure & Rep Ladder:</span> <span class="point-text"><highlight>Autoregulated 20-Minute Block. Rep Ladders of 1, 2, 3 reps.</highlight> C&P 1 rep, Squat 1 rep → Rest → C&P 2 reps, Squat 2 reps → Rest → C&P 3 reps, Squat 3 reps. Repeat ladder.</span></div>
+                        <div class="dose-box">
+                            <div class="dose-item"><span class="dose-label">Time:</span> <span class="dose-value">20 - 30 Mins</span></div>
+                            <div class="dose-item"><span class="dose-label">Format:</span> <span class="dose-value">Ladders (1, 2, 3 reps)</span></div>
                         </div>
-                        <div class="point-item">
-                            <span class="point-icon">✅</span>
-                            <div><span class="point-label">Autoregulation Rule:</span> <span class="point-text">Step up to the bell ONLY when breathing is completely under control through the nose.</span></div>
+                        <div class="detail-row" style="margin-top: 8px;">
+                            <span class="detail-icon">🛑</span>
+                            <div class="detail-content"><strong>Rule:</strong> Step up to the bell ONLY when nasal breathing is under control.</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BLOCK 3: FINISHER CARRY -->
+            <!-- BLOCK 4: FINISHER -->
             <div class="block-section">
-                <div class="block-title">Block 3: QL Shield Finisher</div>
+                <div class="block-title">Block 4: QL Shield Finisher</div>
                 <div class="exercise-grid">
                     <div class="exercise-card">
                         <div class="exercise-header">
-                            <div class="exercise-name">[QL & Anti-Lateral Flexion] Single-Arm Suitcase Carry</div>
-                            <div class="exercise-badge">Carry Finisher</div>
+                            <div class="exercise-name">[QL Core] Single-Arm Suitcase Carry</div>
+                            <div class="exercise-badge">Carry</div>
                         </div>
-                        <div class="four-point-list">
-                            <div class="point-item">
-                                <span class="point-icon">🎯</span>
-                                <div><span class="point-label">Target Zone & WHY:</span> <span class="point-text">Quadratus Lumborum (QL) & Spinal Armor. Must occur at end of session to prevent early fatigue.</span></div>
+                        <div class="detail-grid">
+                            <div class="detail-row">
+                                <span class="detail-icon">🎯</span>
+                                <div class="detail-content"><strong>Why:</strong> Builds spinal armor and anti-lateral flexion.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">📐</span>
-                                <div><span class="point-label">Exact Setup Cues:</span> <span class="point-text">Heavy KB/Dumbbell in one hand. Walk tall with perfectly level shoulders; zero side-leaning.</span></div>
+                            <div class="detail-row">
+                                <span class="detail-icon">📐</span>
+                                <div class="detail-content"><strong>Cues:</strong> Walk tall. Zero side-leaning.</div>
                             </div>
-                            <div class="point-item">
-                                <span class="point-icon">⏱️</span>
-                                <div><span class="point-label">Timer & Dose:</span> <span class="point-text">3 Sets x 40 Meters per side → Rest 60s between arms.</span></div>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-icon">✅</span>
-                                <div><span class="point-label">Success Metric:</span> <span class="point-text">Symmetrical posture maintained through full distance.</span></div>
+                            <div class="dose-box">
+                                <div class="dose-item"><span class="dose-label">Sets:</span> <span class="dose-value">3</span></div>
+                                <div class="dose-item"><span class="dose-label">Distance:</span> <span class="dose-value">40m per side</span></div>
+                                <div class="dose-item"><span class="dose-label">RPE:</span> <span class="dose-value">8</span></div>
+                                <div class="dose-item"><span class="dose-label">Rest:</span> <span class="dose-value">60s</span></div>
                             </div>
                         </div>
                     </div>
@@ -1348,49 +1129,36 @@
             </div>
         </div>
 
-        <!-- ==================== CO2 DICE ROLL AUTOREGULATION ==================== -->
+        <!-- ==================== CO2 GUIDELINES ==================== -->
         <div id="autoreg" class="tab-content">
             <div class="session-header">
                 <div class="session-tag">Autonomic Diagnostics</div>
-                <div class="session-title">Morning CO2 "Dice Roll" Guidelines</div>
-                <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">
-                    Use your morning exhale time (in seconds) compared to your baseline average to autoregulate today's concentric volume.
+                <div class="session-title">Morning CO2 Tolerance Guidelines</div>
+                <p style="font-size: 14px; color: var(--text-muted); margin-top: 6px;">
+                    Compare your morning exhale time (in seconds) to your baseline average to autoregulate today's volume.
                 </p>
             </div>
 
             <div class="block-section">
-                <div class="block-title">Master CO2 Autoregulation Scale</div>
                 <div class="exercise-grid">
-                    <div class="exercise-card">
-                        <div class="exercise-header">
-                            <div class="exercise-name" style="color: var(--accent-red);">🔴 RED DAY (15+ Seconds Below Baseline)</div>
-                            <div class="exercise-badge">CNS Burnout</div>
-                        </div>
-                        <div class="point-text"><strong>Action:</strong> NO HEAVY LIFTING. Skip main workout. Execute 100% RPR resets, light nasal walks, and 3 minutes of 1:4:2 vagal breathing.</div>
+                    <div class="guide-box">
+                        <div class="status-red mb-2">🔴 RED DAY (15+ Sec Below Baseline)</div>
+                        <div class="detail-content"><strong>Action:</strong> NO HEAVY LIFTING. Skip main workout. Execute 100% RPR resets, light nasal walks, and 3 minutes of 1:4:2 vagal breathing.</div>
                     </div>
 
-                    <div class="exercise-card">
-                        <div class="exercise-header">
-                            <div class="exercise-name" style="color: var(--accent-amber);">🟡 BELOW AVERAGE CO2</div>
-                            <div class="exercise-badge">Under-Recovered</div>
-                        </div>
-                        <div class="point-text"><strong>Action: EXECUTE 1 SET ONLY.</strong> You are surviving today. Stimulate tissue, cap volume early, and exit the gym.</div>
+                    <div class="guide-box">
+                        <div class="status-amber mb-2">🟡 AMBER DAY (Below Baseline)</div>
+                        <div class="detail-content"><strong>Action: EXECUTE 1 SET ONLY.</strong> You are surviving today. Stimulate tissue, cap volume early, and exit the gym.</div>
                     </div>
 
-                    <div class="exercise-card">
-                        <div class="exercise-header">
-                            <div class="exercise-name" style="color: var(--accent-green);">🟢 AVERAGE CO2</div>
-                            <div class="exercise-badge">Adapted & Ready</div>
-                        </div>
-                        <div class="point-text"><strong>Action: EXECUTE 2 SETS.</strong> Standard baseline training volume. Leave 2-3 reps in the tank (RPE 7-8).</div>
+                    <div class="guide-box">
+                        <div class="status-green mb-2">🟢 GREEN DAY (At Baseline)</div>
+                        <div class="detail-content"><strong>Action: EXECUTE 2 SETS.</strong> Standard baseline training volume. Leave 2-3 reps in the tank (RPE 7-8).</div>
                     </div>
 
-                    <div class="exercise-card">
-                        <div class="exercise-header">
-                            <div class="exercise-name" style="color: var(--primary-orange);">⚡ ABOVE AVERAGE CO2</div>
-                            <div class="exercise-badge">Fully Primed</div>
-                        </div>
-                        <div class="point-text"><strong>Action: EXECUTE 3 SETS.</strong> Your central nervous system is fully primed. Push maximum athletic intent and velocity.</div>
+                    <div class="guide-box">
+                        <div class="status-orange mb-2">⚡ ORANGE DAY (Above Baseline)</div>
+                        <div class="detail-content"><strong>Action: EXECUTE 3 SETS.</strong> Your central nervous system is fully primed. Push maximum athletic intent and velocity.</div>
                     </div>
                 </div>
             </div>
@@ -1399,62 +1167,32 @@
         <!-- ==================== DAILY HABITS & CHECK-IN ==================== -->
         <div id="habits" class="tab-content">
             <div class="session-header">
-                <div class="session-tag">Neuro-Inclusive Compliance</div>
-                <div class="session-title">Daily Habit Anchors & Check-In Scale</div>
+                <div class="session-tag">Daily Compliance</div>
+                <div class="session-title">Daily Habit Anchors</div>
             </div>
 
             <!-- 1-2-3 CHECK-IN SCALE -->
             <div class="block-section">
                 <div class="block-title">Binary 1-2-3 Post-Session Check-In Protocol</div>
-                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Eliminates communication anxiety. Reply directly in messaging with a single number:</p>
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Reply directly in messaging with a single number post-session:</p>
                 
-                <div class="checkin-grid">
-                    <div class="checkin-card">
-                        <div class="checkin-number scale-1">1</div>
-                        <div style="font-weight: 700; color: #FFF; font-size: 14px;">OPTIMAL</div>
-                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Zero joint pain. Feeling springy & fully recovered.</div>
+                <div class="exercise-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+                    <div class="guide-box" style="margin-bottom: 0; text-align: center;">
+                        <div class="status-green text-3xl mb-1">1</div>
+                        <div class="font-bold text-white mb-2">OPTIMAL</div>
+                        <div class="detail-content text-sm">Zero joint pain. Feeling springy & fully recovered.</div>
                     </div>
 
-                    <div class="checkin-card">
-                        <div class="checkin-number scale-2">2</div>
-                        <div style="font-weight: 700; color: #FFF; font-size: 14px;">TIGHTNESS</div>
-                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Mild joint tightness or heavy muscles. Standard fatigue.</div>
+                    <div class="guide-box" style="margin-bottom: 0; text-align: center;">
+                        <div class="status-amber text-3xl mb-1">2</div>
+                        <div class="font-bold text-white mb-2">TIGHTNESS</div>
+                        <div class="detail-content text-sm">Mild joint tightness or heavy muscles. Standard fatigue.</div>
                     </div>
 
-                    <div class="checkin-card">
-                        <div class="checkin-number scale-3">3</div>
-                        <div style="font-weight: 700; color: #FFF; font-size: 14px;">FLARED UP</div>
-                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Flared-up joint pain. Need a profile override.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DAILY HABIT ANCHORS -->
-            <div class="block-section">
-                <div class="block-title">3 Anchored Daily Routine</div>
-                <div class="habit-timeline">
-                    <div class="habit-item">
-                        <div class="habit-time">07:00 AM</div>
-                        <div class="habit-details">
-                            <h4>Morning CO2 Tolerance Breath Test</h4>
-                            <p>Test upon waking before getting out of bed. Log exhale seconds to set daily "Dice Roll" volume.</p>
-                        </div>
-                    </div>
-
-                    <div class="habit-item">
-                        <div class="habit-time">MIDDAY</div>
-                        <div class="habit-details">
-                            <h4>TRS Microcycle Session (Session A, B, or C)</h4>
-                            <p>Deterministic isometric & StrongFirst kettlebell block. Minimalist execution.</p>
-                        </div>
-                    </div>
-
-                    <div class="habit-item">
-                        <div class="habit-time">20:30 PM</div>
-                        <div class="habit-details">
-                            <h4>Evening Yoga Nidra Reset</h4>
-                            <p>15-minute audio nervous system down-regulation. Wear headphones, lie flat, check box on app.</p>
-                        </div>
+                    <div class="guide-box" style="margin-bottom: 0; text-align: center;">
+                        <div class="status-red text-3xl mb-1">3</div>
+                        <div class="font-bold text-white mb-2">FLARED UP</div>
+                        <div class="detail-content text-sm">Flared-up joint pain. Need a profile override.</div>
                     </div>
                 </div>
             </div>
@@ -1462,30 +1200,22 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <p>NLC Performance // Tactical Readiness System (TRS) Function Tier</p>
-        <p style="margin-top: 4px; font-size: 11px; opacity: 0.7;">Designed for Autistic, ADHD & Executive-Sensitive High Performers.</p>
     </footer>
 
     <!-- INTERACTIVE JAVASCRIPT -->
     <script>
         function switchTab(tabId) {
-            // Hide all tab contents
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
 
-            // Deactivate all tab buttons
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            // Show selected content
             const targetContent = document.getElementById(tabId);
-            if (targetContent) {
-                targetContent.classList.add('active');
-            }
+            if (targetContent) targetContent.classList.add('active');
 
-            // Highlight active button
             event.currentTarget.classList.add('active');
         }
     </script>
